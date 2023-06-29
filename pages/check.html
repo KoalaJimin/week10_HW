@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #background {
+      position: relative;
+      height: 1200px;
+      background: #f5f5f5;
+    }
+
+    #delete {
+      position: relative;
+      left: 600px;
+      top: 110px;
+    }
+
+    #modify {
+      position: relative;
+      width: 50px;
+      height: 30px;
+      left: 660px;
+      top: 65px;
+      background: #bcbcbc;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+    }
+
+    #modifyText {
+      position: relative;
+      width: 56px;
+      height: 28px;
+      left: 8.5px;
+      top: 4px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #000000;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    #whiteBox {
+      position: relative;
+      width: 318px;
+      height: 500px;
+      top: 87px;
+      margin: auto;
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #todayDate {
+      position: relative;
+      width: 263px;
+      height: 50px;
+      top: 40px;
+      margin: auto;
+      margin-left: 50px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      color: #4c7343;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    #line {
+      position: relative;
+      width: 238px;
+      height: 0px;
+      top: 30px;
+      margin: auto;
+      border: 1px solid #6da85f;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    #posting {
+      position: relative;
+      height: 50px;
+      top: 50px;
+      left: 45px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #000000;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    #chatText {
+      position: relative;
+      width: 143px;
+      height: 22px;
+      left: 620px;
+      top: 110px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    #chattingBox1 {
+      position: relative;
+      width: 318px;
+      height: 79px;
+      margin: auto;
+      top: 130px;
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #profile1 {
+      position: relative;
+      left: 20.19px;
+      top: 14px;
+    }
+
+    #name1 {
+      position: relative;
+      width: 53px;
+      height: 25px;
+      left: 90px;
+      top: -35px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      color: #4c7343;
+    }
+
+    #chatting1 {
+      position: relative;
+      width: 192px;
+      height: 50px;
+      left: 90px;
+      top: -35px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
+      color: #000000;
+    }
+
+    #chattingBox2 {
+      position: relative;
+      width: 318px;
+      height: 79px;
+      margin: auto;
+      top: 150px;
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #profile2 {
+      position: relative;
+      left: 20.19px;
+      top: 14px;
+    }
+
+    #name2 {
+      position: relative;
+      width: 53px;
+      height: 25px;
+      left: 90px;
+      top: -35px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      color: #4c7343;
+    }
+
+    #chatting2 {
+      position: relative;
+      width: 192px;
+      height: 50px;
+      left: 90px;
+      top: -35px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
+      color: #000000;
+    }
+
+    #underNavigation {
+      position: relative;
+      background-color: #aad6a0;
+      width: 340px;
+      height: 150px;
+      top: 180px;
+      border-radius: 10px 10px 0px 0px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #calender {
+      margin-left: 60px;
+    }
+
+    #home {
+      border-radius: 120px;
+      background-color: #fffbd9;
+      border: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 6%;
+    }
+
+    #graph {
+      position: relative;
+      left: 5%;
+      right: 23.85%;
+      top: -8%;
+    }
+
+    #market {
+      margin-top: 25px;
+      margin-left: 10px;
+    }
+
+    #logoutBtn {
+      position: relative;
+      width: 56px;
+      height: 27px;
+      left: 275px;
+      top: -30px;
+      background: #4c7343;
+    }
+
+    #logoutText {
+      position: relative;
+      width: 100px;
+      height: 15px;
+      left: 4px;
+      top: 5px;
+      font-family: "SUIT";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #fffbd9;
+    }
+  </style>
+  <body>
+    <div id="background">
+      <div id="delete">
+        <img src="/images/trashCan.png" alt="삭제" width="45px" height="45px" />
+      </div>
+      <div id="modify"><div id="modifyText">수정</div></div>
+      <div id="whiteBox">
+        <div id="todayDate">
+          <script>
+            let now = new Date();
+
+            function getTodayLabel() {
+              var week = new Array(
+                "일요일",
+                "월요일",
+                "화요일",
+                "수요일",
+                "목요일",
+                "금요일",
+                "토요일"
+              );
+
+              var today = new Date().getDay();
+              var todayLabel = week[today];
+
+              return todayLabel;
+            }
+
+            document.write(now.getFullYear() + "년 ");
+            document.write(now.getMonth() + 1 + "월 ");
+            document.write(now.getDate() + "일 ");
+            document.write(getTodayLabel());
+          </script>
+        </div>
+        <hr id="line" />
+        <div id="posting">오늘 무슨 일이 있었냐면 ...</div>
+      </div>
+      <div id="chatText">댓글(<span id="chat_num"></span>)</div>
+      <div id="chattingBox1">
+        <div id="profile1">
+          <img
+            src="/images/Ellipse 3.png"
+            alt="홈"
+            width="50px"
+            height="50px"
+          />
+        </div>
+        <div id="name1">미영</div>
+        <div id="chatting1">왜 글을 쓰다마세요..</div>
+      </div>
+      <div id="chattingBox2">
+        <div id="profile2">
+          <img
+            src="/images/Ellipse 3.png"
+            alt="홈"
+            width="50px"
+            height="50px"
+          />
+        </div>
+        <div id="name2">미영</div>
+        <div id="chatting2">더 써주세요...</div>
+      </div>
+      <div id="underNavigation">
+        <span id="calender">
+          <img
+            src="/images/calender.png"
+            alt="달력"
+            width="65px"
+            height="65px"
+          />
+        </span>
+        <span>
+          <button id="home">
+            <img
+              src="/images/homeBook.png"
+              alt="홈"
+              width="60px"
+              height="60px"
+            />
+          </button>
+        </span>
+        <span id="graph">
+          <img
+            src="/images/graph.png"
+            alt="그래프"
+            width="40px"
+            height="40px"
+          />
+        </span>
+        <div id="market">
+          <img src="/images/market.png" alt="마켓" width="30px" height="30px" />
+        </div>
+        <div id="logoutBtn"><div id="logoutText">로그아웃</div></div>
+      </div>
+    </div>
+    <script src="/js/check.js"></script>
+  </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #background {
+      position: relative;
+      height: 844px;
+      background: #f5f5f5;
+    }
+
+    #mainDate {
+      position: relative;
+      padding-top: 1%;
+      width: 195px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: "Pretendard";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 43px;
+      text-align: center;
+      color: #000000;
+    }
+
+    #menu {
+      box-sizing: border-box;
+      position: relative;
+      width: 194px;
+      height: 28px;
+      left: 655px;
+      top: -25px;
+      background: #ffffff;
+      border: 3px solid #4c7343;
+      box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+    }
+
+    #tyle {
+      position: relative;
+      width: 105px;
+      height: 28px;
+      top: -3px;
+      background: #4c7343;
+      border-radius: 15px;
+    }
+
+    #tyleText {
+      position: relative;
+      width: 35px;
+      height: 27px;
+      left: 36px;
+      top: 2.5px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      color: white;
+    }
+
+    #list {
+      position: relative;
+      width: 81px;
+      height: 17px;
+      left: 122px;
+      top: -24px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+
+      color: #4c7343;
+    }
+
+    #rec1 {
+      position: relative;
+      width: 120px;
+      height: 180px;
+      margin-left: 41%;
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #rec2 {
+      position: relative;
+      background-color: white;
+      width: 120px;
+      height: 180px;
+      margin-left: 51%;
+      top: -179.5px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #rec3 {
+      position: relative;
+      width: 120px;
+      height: 180px;
+      margin-left: 41%;
+      top: -150px;
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #rec4 {
+      position: relative;
+      background-color: white;
+      width: 120px;
+      height: 180px;
+      margin-left: 51%;
+      top: -329.5px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #rec5 {
+      position: relative;
+      width: 120px;
+      height: 180px;
+      margin-left: 41%;
+      top: -300px;
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #rec6 {
+      position: relative;
+      background-color: white;
+      width: 120px;
+      height: 180px;
+      margin-left: 51%;
+      top: -479px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #date {
+      color: #4c7343;
+      font-size: 15px;
+      font-weight: bold;
+      padding-top: 9%;
+      text-align: left;
+      padding-left: 13%;
+    }
+
+    #story {
+      padding-left: 8%;
+      font-size: 15px;
+    }
+
+    #underNavigation {
+      position: relative;
+      background-color: #aad6a0;
+      width: 340px;
+      height: 150px;
+      top: -530px;
+      border-radius: 10px 10px 0px 0px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #calender {
+      margin-left: 60px;
+    }
+
+    #home {
+      border-radius: 120px;
+      background-color: #fffbd9;
+      border: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 6%;
+    }
+
+    #graph {
+      position: relative;
+      left: 5%;
+      right: 23.85%;
+      top: -8%;
+    }
+
+    #market {
+      margin-top: 25px;
+      margin-left: 10px;
+    }
+
+    #logoutBtn {
+      position: relative;
+      width: 56px;
+      height: 27px;
+      left: 276px;
+      top: -30px;
+      background: #4c7343;
+    }
+
+    #logoutText {
+      position: relative;
+      width: 100px;
+      height: 15px;
+      left: 3px;
+      top: 5px;
+      font-family: "SUIT";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #fffbd9;
+    }
+  </style>
+  <body>
+    <div id="background">
+      <div id="mainDate">
+        <script>
+          let now = new Date();
+          document.write(now.getFullYear() + "년 ");
+          document.write(now.getMonth() + 1 + "월 ");
+          document.write(now.getDate() + "일");
+        </script>
+      </div>
+      <div id="menu">
+        <div id="tyle">
+          <div id="tyleText">타일</div>
+          <div id="list">리스트</div>
+        </div>
+      </div>
+      <div id="rec">
+        <div id="rec1">
+          <div id="date">2023년 XX월 <br />XX일 X요일</div>
+          <hr style="width: 100px" />
+          <div id="story">오늘 무슨 일이 있었냐면...</div>
+        </div>
+        <div id="rec2">
+          <div id="date">2023년 XX월 <br />XX일 X요일</div>
+          <hr style="width: 100px" />
+          <div id="story">오늘 무슨 일이 있었냐면...</div>
+        </div>
+        <div id="rec3">
+          <div id="date">2023년 XX월 <br />XX일 X요일</div>
+          <hr style="width: 100px" />
+          <div id="story">오늘 무슨 일이 있었냐면...</div>
+        </div>
+        <div id="rec4">
+          <div id="date">2023년 XX월 <br />XX일 X요일</div>
+          <hr style="width: 100px" />
+          <div id="story">오늘 무슨 일이 있었냐면...</div>
+        </div>
+        <div id="rec5">
+          <div id="date">2023년 XX월 <br />XX일 X요일</div>
+          <hr style="width: 100px" />
+          <div id="story">오늘 무슨 일이 있었냐면...</div>
+        </div>
+        <div id="rec6">
+          <div id="date">2023년 XX월 <br />XX일 X요일</div>
+          <hr style="width: 100px" />
+          <div id="story">오늘 무슨 일이 있었냐면...</div>
+        </div>
+      </div>
+      <div id="underNavigation">
+        <span id="calender">
+          <img
+            src="/images/calender.png"
+            alt="달력"
+            width="65px"
+            height="65px"
+          />
+        </span>
+        <span>
+          <button id="home">
+            <img
+              src="/images/homeBook.png"
+              alt="홈"
+              width="60px"
+              height="60px"
+            />
+          </button>
+        </span>
+        <span id="graph">
+          <img
+            src="/images/graph.png"
+            alt="그래프"
+            width="40px"
+            height="40px"
+          />
+        </span>
+        <div id="market">
+          <img src="/images/market.png" alt="마켓" width="30px" height="30px" />
+        </div>
+        <div id="logoutBtn"><div id="logoutText">로그아웃</div></div>
+      </div>
+    </div>
+    <script src="/js/write.js"></script>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #background {
+      position: relative;
+      height: 844px;
+      background: #f5f5f5;
+    }
+
+    #whiteBox {
+      position: relative;
+      width: 318px;
+      height: 542px;
+      top: 87px;
+      margin: auto;
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    #todayDate {
+      position: relative;
+      width: 263px;
+      height: 50px;
+      top: 40px;
+      margin: auto;
+      margin-left: 50px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      color: #4c7343;
+    }
+
+    #line {
+      position: relative;
+      width: 238px;
+      height: 0px;
+      top: 30px;
+      margin: auto;
+      border: 1px solid #6da85f;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    #photo {
+      position: relative;
+      width: 240px;
+      height: 174px;
+      top: 50px;
+      margin: auto;
+      background: #d9d9d9;
+    }
+
+    #photoText {
+      position: relative;
+      width: 42px;
+      height: 28px;
+      bottom: -75px;
+      left: 104px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+
+      color: #000000;
+    }
+
+    #posting {
+      position: relative;
+      width: px;
+      height: 50px;
+      top: 65px;
+      left: 45px;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #000000;
+    }
+
+    #underNavigation {
+      position: relative;
+      width: 390px;
+      height: 192px;
+      top: 110px;
+      margin: auto;
+      background: #aad6a0;
+      box-shadow: -5px -5px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 15px 15px 0px 0px;
+    }
+
+    #saveButton {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      top: 50px;
+      margin: auto;
+      background: #fffbd9;
+      box-shadow: 0px 2px 8px #ffffff;
+      border-radius: 50%;
+    }
+
+    #save {
+      position: relative;
+      width: 36px;
+      height: 34px;
+      left: 23%;
+      top: 34%;
+      font-family: "Noto Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+
+      color: #4c7343;
+    }
+
+    #gallery {
+      position: relative;
+      left: 16px;
+      top: 70px;
+    }
+  </style>
+  <body>
+    <div id="background">
+      <div id="whiteBox">
+        <div id="todayDate">
+          <script>
+            let now = new Date();
+
+            function getTodayLabel() {
+              var week = new Array(
+                "일요일",
+                "월요일",
+                "화요일",
+                "수요일",
+                "목요일",
+                "금요일",
+                "토요일"
+              );
+
+              var today = new Date().getDay();
+              var todayLabel = week[today];
+
+              return todayLabel;
+            }
+
+            document.write(now.getFullYear() + "년 ");
+            document.write(now.getMonth() + 1 + "월 ");
+            document.write(now.getDate() + "일 ");
+            document.write(getTodayLabel());
+          </script>
+        </div>
+        <hr id="line" />
+        <div id="photo"><span id="photoText">사진</span></div>
+        <div id="posting">오늘 무슨 일이 있었냐면 ...</div>
+      </div>
+      <div id="underNavigation">
+        <div id="saveButton"><span id="save">저장</span></div>
+        <span id="gallery"
+          ><img src="/images/gallery.png" alt="달력" width="50px" height="50px"
+        /></span>
+      </div>
+    </div>
+  </body>
+</html>
