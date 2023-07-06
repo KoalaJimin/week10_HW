@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #background {
+      margin: 0 auto;
+      width: 390px;
+      height: 844px;
+      background: #f5f5f5;
+      display: block;
+      font-size: 0;
+    }
+
+    #mainDate {
+      position: relative;
+      padding-top: 1%;
+      width: 195px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: "Pretendard";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 43px;
+      text-align: center;
+      color: #000000;
+
+      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    #base {
+      box-sizing: border-box;
+      width: 194px;
+      height: 28px;
+      margin: 0 auto;
+      top: -25px;
+      background: #ffffff;
+      border: 3px solid #4c7343;
+      box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+    }
+
+    #listClick {
+      margin-top: -6.3%;
+      margin-left: 27.5%;
+    }
+
+    #tile {
+      position: relative;
+      width: 81px;
+      height: 17px;
+      font-weight: 700;
+      font-size: 15.5px;
+      color: #4c7343;
+      margin-left: 18%;
+      margin-top: 0.5%;
+    }
+
+    #whiteBox {
+      position: relative;
+      width: 313px;
+      height: 575px;
+      margin: auto;
+      margin-top: 5%;
+      background: #ffffff;
+      border-radius: 10px;
+    }
+
+    .memo-board {
+      position: relative;
+      overflow-y: scroll;
+      width: 313px;
+      height: 575px;
+      padding-top: 10px;
+      /* display: flex;
+      flex-wrap: wrap;*/
+    }
+    .memo-board::-webkit-scrollbar {
+      display: none;
+    }
+
+    .memo-item {
+      max-width: 350px;
+      max-height: 30px;
+      margin: 0 auto;
+      text-align: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .memo-date {
+      color: #4c7343;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 6px;
+      width: 260px;
+      border-bottom: 2px solid #ccc;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    #underNavigation {
+      position: absolute;
+      background-color: #aad6a0;
+      width: 390px;
+      height: 189.48px;
+      box-shadow: 5px -5px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 15px 15px 0px 0px;
+      margin-top: 80px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #calender {
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+    }
+
+    #home {
+      border-radius: 50%;
+      background-color: #fffbd9;
+      border: none;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #graph {
+      position: absolute;
+      top: 40%;
+      left: 80%;
+      transform: translate(-50%, -50%);
+    }
+
+    #market {
+      position: absolute;
+      top: 85%;
+      left: 8%;
+      transform: translate(-50%, -50%);
+    }
+
+    #logout {
+      position: absolute;
+      top: 85%;
+      left: 89%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div id="background">
+      <div id="mainDate">
+        <script>
+          let now = new Date();
+          document.write(now.getFullYear() + "년 ");
+          document.write(now.getMonth() + 1 + "월 ");
+          document.write(now.getDate() + "일");
+        </script>
+      </div>
+      <div id="base" onclick="goToTilePage()">
+        <div id="tile" onclick="goToTilePage()">타일</div>
+        <div id="listClick">
+          <img
+            id="listClick"
+            src="/images/listClick.png"
+            alt="리스트"
+            width="108px"
+            height="27px"
+          />
+        </div>
+      </div>
+      <div id="whiteBox"><div class="memo-board"></div></div>
+      <div id="underNavigation">
+        <span id="calender">
+          <img
+            src="/images/calender.png"
+            alt="달력"
+            width="65px"
+            height="65px"
+          />
+        </span>
+        <span>
+          <button id="home" onclick="goToInputPage()">
+            <img
+              src="/images/homeBook.png"
+              alt="홈"
+              width="60px"
+              height="60px"
+            />
+          </button>
+        </span>
+        <span id="graph">
+          <img
+            src="/images/graph.png"
+            alt="그래프"
+            width="40px"
+            height="40px"
+          />
+        </span>
+        <div id="market">
+          <img src="/images/market.png" alt="마켓" width="30px" height="30px" />
+        </div>
+        <div id="logout" onclick="goToLoginPage()">
+          <img src="/images/logout.png" alt="로그아웃" width="55px" />
+        </div>
+      </div>
+    </div>
+    <script src="/js/mainList.js"></script>
+  </body>
+</html>

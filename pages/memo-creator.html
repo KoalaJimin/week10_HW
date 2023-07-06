@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memo Creator</title>
+    <style>
+      .memo-creator {
+        margin-bottom: 20px;
+      }
+
+      .memo-textarea {
+        width: 300px;
+        height: 100px;
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="memo-creator">
+      <textarea class="memo-textarea"></textarea>
+      <button onclick="createMemo()" class="memo-button">저장</button>
+    </div>
+
+    <script>
+      function createMemo() {
+        var memoTextarea = document.querySelector(".memo-textarea");
+        var memoText = memoTextarea.value.trim();
+
+        if (memoText !== "") {
+          // 메모 게시판 페이지로 이동
+          window.location.href =
+            "memo-board.html#" + encodeURIComponent(memoText);
+        }
+        /*function getMemoWithDate(memoText) {
+            var currentDate = new Date();
+            var dateString = currentDate.toLocaleString();
+            return "[" + dateString + "] " + memoText;
+          }*/
+      }
+    </script>
+  </body>
+</html>

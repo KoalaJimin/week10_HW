@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memo Board</title>
+    <style>
+      .memo-board {
+        width: 600px;
+        padding: 10px;
+        background-color: #f5f5f5;
+      }
+
+      .memo-item {
+        position: relative;
+        margin-bottom: 10px;
+        padding: 5px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+
+      .memo-text {
+        margin-bottom: 5px;
+      }
+
+      .memo-date {
+        font-size: 0.8em;
+        color: #666;
+        position: absolute;
+        bottom: 0;
+        left: 5px;
+        right: 5px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+      }
+
+      .memo-controls {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .memo-delete {
+        color: #ff0000;
+        cursor: pointer;
+      }
+
+      .memo-edit {
+        color: #0000ff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="memo-board"></div>
+
+    <script>
+      function displayMemos(memos) {
+        var memoBoard = document.querySelector(".memo-board");
+        memoBoard.innerHTML = "";
+
+        memos.forEach(function (memo, index) {
+          var memoItem = document.createElement("div");
+          memoItem.classList.add("memo-item");
+
+          var memoText = document.createElement("div");
+          memoText.classList.add("memo-text");
+          memoText.textContent = memo.text;
+
+          var memoDate = document.createElement("div");
+          memoDate.classList.add("memo-date");
+          memoDate.textContent = memo.date;
+
+          var memoControls = document.createElement("div");
+          memoControls.classList.add("memo-controls");
+
+          var deleteButton = document.createElement("span");
+          deleteButton.classList.add("memo-delete");
+          deleteButton.textContent = "Delete";
+          deleteButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            deleteMemo(index);
+          });
+
+          var editButton = document.createElement("span");
+          editButton.classList.add("memo-edit");
+          editButton.textContent = "Edit";
+          editButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            openMemoEditPage(index);
+          });
+
+          memoControls.appendChild(deleteButton);
+          memoControls.appendChild(editButton);
+
+          memoItem.appendChild(memoText);
+          memoItem.appendChild(memoDate);
+          memoItem.appendChild(memoControls);
+
+          // 클릭 이벤트 추가
+          /*memoItem.addEventListener("click", function () {
+            openMemoEditPage(index);
+          });*/
+
+          memoBoard.appendChild(memoItem);
+        });
+      }
+
+      function getSavedMemos() {
+        var savedMemos = localStorage.getItem("memos");
+        return savedMemos ? JSON.parse(savedMemos) : [];
+      }
+
+      function init() {
+        // 메모 생성 칸에서 전달된 메모 내용 가져오기
+        var memoText = decodeURIComponent(window.location.hash.substring(1));
+
+        if (memoText) {
+          var memos = getSavedMemos();
+          var currentDate = new Date();
+          var dateString = currentDate.toLocaleString();
+
+          memos.push({ text: memoText, date: dateString });
+          localStorage.setItem("memos", JSON.stringify(memos));
+        }
+
+        // 페이지 로드 시 저장된 메모들 표시
+        var memos = getSavedMemos();
+        displayMemos(memos);
+      }
+
+      function deleteMemo(index) {
+        var memos = getSavedMemos();
+        memos.splice(index, 1);
+        localStorage.setItem("memos", JSON.stringify(memos));
+        displayMemos(memos);
+      }
+
+      function openMemoEditPage(index) {
+        var memos = getSavedMemos();
+        var memo = memos[index];
+        var editUrl =
+          "edit-memo.html#" + encodeURIComponent(JSON.stringify(memo));
+        window.location.href = editUrl;
+      }
+
+      init();
+
+      // 새로고침 시 메모 초기화
+      window.addEventListener("beforeunload", function () {
+        localStorage.removeItem("memos");
+        displayMemos([]);
+      });
+    </script>
+  </body>
+</html>
